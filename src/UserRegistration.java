@@ -11,7 +11,7 @@ public class UserRegistration {
 	public static final String EMAILPATTERN = "([0-9A-Za-z])+([-+._][0-9A-Za-z]+)*"
 			+ "@([0-9A-Za-z])+[.]([a-zA-Z])+([.][A-Za-z]+)*";
 	public static final String MOBILENUMBERPATTERN = "\\d{2}[-\\.\\s]\\d{10}";
-	public static final String PASSWORDPATTERN = "^(?=.{8,}).*$";
+	public static final String PASSWORDPATTERN = "^(?=.{8,})(?=.*[A-Z]).*$";
 	UserRegistrationInf userRegistrationInf = (pattern, input) -> Pattern.matches(pattern, input);
 	
 	public static void main(String[] args) {
