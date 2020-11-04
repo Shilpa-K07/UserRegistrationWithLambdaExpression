@@ -8,6 +8,8 @@ interface UserRegistrationInf {
 public class UserRegistration {
 	Scanner scanner = new Scanner(System.in);
 	public static final String NAMEPATTERN = "[A-Z][A-Za-z]{2,}";
+	public static final String EMAILPATTERN = "([0-9A-Za-z])+([-+._][0-9A-Za-z]+)*"
+											+ "@([0-9A-Za-z])+[.]([a-zA-Z])+([.][A-Za-z]+)*";
 	UserRegistrationInf userRegistrationInf = (pattern, input) -> Pattern.matches(pattern, input);
 	
 	public static void main(String[] args) {
@@ -33,5 +35,9 @@ public class UserRegistration {
 		System.out.println("Enter last name ");
 		String lastName = scanner.next();
 		validateUserInput(NAMEPATTERN, lastName, userRegistrationInf);
+		
+		System.out.println("Enter email id ");
+		String emailId = scanner.next();
+		validateUserInput(EMAILPATTERN, emailId, userRegistrationInf);
 	}
 }
